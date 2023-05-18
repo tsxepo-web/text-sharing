@@ -46,7 +46,7 @@ namespace TextSharing.Controllers
             return CreatedAtAction(nameof(Get), new { slug }, slug);
         }
 
-        [HttpPut("{slug}")]
+        [HttpPut("edit/{slug}")]
         public async Task<ActionResult<string>> Put(string slug, [FromBody] Snippet updatedSnippet)
         {
             var result =  await _snippetRepository.UpdateAsync(slug, updatedSnippet);
